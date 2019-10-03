@@ -1,0 +1,15 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7 (64-bit)
+# Build 321239 by xbuild on Fri Sep 27 19:24:36 MDT 2013
+# Start of session at: Mon Jan 21 15:26:22 2019
+# Process ID: 5876
+# Log file: /media/paramvir/786F-1E38/CS220Labs/Lab2_2/seven_bit_adder/planAhead_run_3/planAhead.log
+# Journal file: /media/paramvir/786F-1E38/CS220Labs/Lab2_2/seven_bit_adder/planAhead_run_3/planAhead.jou
+#-----------------------------------------------------------
+start_gui
+source /media/paramvir/786F-1E38/CS220Labs/Lab2_2/seven_bit_adder/pa.fromHdl.tcl
+update_compile_order -fileset sim_1
+startgroup
+set_property package_pin V4 [get_ports pb1]
+endgroup
+save_constraints

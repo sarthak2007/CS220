@@ -1,0 +1,472 @@
+Release 14.7 - xst P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.06 secs
+ 
+--> 
+Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.06 secs
+ 
+--> 
+Reading design: top.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "top.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "top"
+Output Format                      : NGC
+Target Device                      : xc3s500e-4-fg320
+
+---- Source Options
+Top Module Name                    : top
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "driver.v" in library work
+Compiling verilog file "top.v" in library work
+Module <driver> compiled
+Module <top> compiled
+No errors in compilation
+Analysis of file <"top.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <top> in library <work>.
+
+Analyzing hierarchy for module <driver> in library <work>.
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <top>.
+Module <top> is correct for synthesis.
+ 
+Analyzing module <driver> in library <work>.
+WARNING:Xst:790 - "driver.v" line 221: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "driver.v" line 231: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "driver.v" line 279: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "driver.v" line 289: Index value(s) does not match array range, simulation mismatch.
+Module <driver> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+INFO:Xst:2679 - Register <LCD_W> in unit <driver> has a constant value of 0 during circuit operation. The register is replaced by logic.
+
+Synthesizing Unit <driver>.
+    Related source file is "driver.v".
+    Found finite state machine <FSM_0> for signal <local>.
+    -----------------------------------------------------------------------
+    | States             | 6                                              |
+    | Transitions        | 123                                            |
+    | Inputs             | 11                                             |
+    | Outputs            | 8                                              |
+    | Clock              | clk                       (rising_edge)        |
+    | Power Up State     | 000000                                         |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found finite state machine <FSM_1> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 10                                             |
+    | Transitions        | 29                                             |
+    | Inputs             | 5                                              |
+    | Outputs            | 10                                             |
+    | Clock              | clk                       (rising_edge)        |
+    | Power Up State     | 000001                                         |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 1-bit register for signal <LCD_E>.
+    Found 1-bit register for signal <LCD_RS>.
+    Found 4-bit register for signal <data>.
+    Found 26-bit register for signal <cnt>.
+    Found 26-bit adder for signal <cnt$share0000>.
+    Found 6-bit register for signal <count>.
+    Found 6-bit adder for signal <count$share0000>.
+    Found 9-bit register for signal <pos>.
+    Found 9-bit subtractor for signal <pos$addsub0000> created at line 225.
+    Found 9-bit down accumulator for signal <pos1>.
+    Found 3-bit up counter for signal <temp>.
+    Summary:
+	inferred   2 Finite State Machine(s).
+	inferred   1 Counter(s).
+	inferred   1 Accumulator(s).
+	inferred  47 D-type flip-flop(s).
+	inferred   3 Adder/Subtractor(s).
+Unit <driver> synthesized.
+
+
+Synthesizing Unit <top>.
+    Related source file is "top.v".
+WARNING:Xst:653 - Signal <second> is used but never assigned. This sourceless signal will be automatically connected to value 01001001010010010101010000100000010010110100000101001110010100000101010101010010001000000010000000100000001000000010000000100000.
+WARNING:Xst:653 - Signal <first> is used but never assigned. This sourceless signal will be automatically connected to value 01010111010001010100110001000011010011110100110101000101001000000101010001001111001000000100001101010011010001010010110000100000.
+Unit <top> synthesized.
+
+INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# Adders/Subtractors                                   : 3
+ 26-bit adder                                          : 1
+ 6-bit adder                                           : 1
+ 9-bit subtractor                                      : 1
+# Counters                                             : 1
+ 3-bit up counter                                      : 1
+# Accumulators                                         : 1
+ 9-bit down accumulator                                : 1
+# Registers                                            : 6
+ 1-bit register                                        : 2
+ 26-bit register                                       : 1
+ 4-bit register                                        : 1
+ 6-bit register                                        : 1
+ 9-bit register                                        : 1
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Analyzing FSM <FSM_1> for best encoding.
+Optimizing FSM <d/state/FSM> on signal <state[1:4]> with gray encoding.
+--------------------
+ State  | Encoding
+--------------------
+ 000001 | 0000
+ 000010 | 0001
+ 000011 | 0011
+ 000100 | 0010
+ 000101 | 0110
+ 000110 | 0111
+ 000111 | 0101
+ 001000 | 0100
+ 001001 | 1100
+ 001010 | 1101
+--------------------
+Analyzing FSM <FSM_0> for best encoding.
+Optimizing FSM <d/local/FSM> on signal <local[1:6]> with one-hot encoding.
+--------------------
+ State  | Encoding
+--------------------
+ 000000 | 000001
+ 000001 | 000010
+ 000010 | 000100
+ 000011 | 001000
+ 000100 | 010000
+ 000101 | 100000
+--------------------
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# FSMs                                                 : 2
+# Adders/Subtractors                                   : 3
+ 26-bit adder                                          : 1
+ 6-bit adder                                           : 1
+ 9-bit subtractor                                      : 1
+# Counters                                             : 1
+ 3-bit up counter                                      : 1
+# Accumulators                                         : 1
+ 9-bit down accumulator                                : 1
+# Registers                                            : 47
+ Flip-Flops                                            : 47
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1293 - FF/Latch <pos1_0> has a constant value of 1 in block <driver>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <pos1_1> has a constant value of 1 in block <driver>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <pos_7> of sequential type is unconnected in block <driver>.
+WARNING:Xst:2677 - Node <pos_8> of sequential type is unconnected in block <driver>.
+WARNING:Xst:2677 - Node <pos1_7> of sequential type is unconnected in block <driver>.
+WARNING:Xst:2677 - Node <pos1_8> of sequential type is unconnected in block <driver>.
+
+Optimizing unit <top> ...
+
+Optimizing unit <driver> ...
+WARNING:Xst:1293 - FF/Latch <pos_0> has a constant value of 1 in block <driver>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <pos_1> has a constant value of 1 in block <driver>. This FF/Latch will be trimmed during the optimization process.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block top, actual ratio is 2.
+FlipFlop d/state_FSM_FFd1 has been replicated 1 time(s)
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 62
+ Flip-Flops                                            : 62
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : top.ngr
+Top Level Output File Name         : top
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 8
+
+Cell Usage :
+# BELS                             : 289
+#      GND                         : 1
+#      INV                         : 3
+#      LUT1                        : 25
+#      LUT2                        : 18
+#      LUT2_D                      : 2
+#      LUT2_L                      : 2
+#      LUT3                        : 53
+#      LUT3_D                      : 7
+#      LUT3_L                      : 1
+#      LUT4                        : 80
+#      LUT4_D                      : 14
+#      LUT4_L                      : 18
+#      MUXCY                       : 32
+#      MUXF5                       : 6
+#      VCC                         : 1
+#      XORCY                       : 26
+# FlipFlops/Latches                : 62
+#      FD                          : 37
+#      FDE                         : 13
+#      FDS                         : 12
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 7
+#      OBUF                        : 7
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s500efg320-4 
+
+ Number of Slices:                      117  out of   4656     2%  
+ Number of Slice Flip Flops:             62  out of   9312     0%  
+ Number of 4 input LUTs:                223  out of   9312     2%  
+ Number of IOs:                           8
+ Number of bonded IOBs:                   8  out of    232     3%  
+ Number of GCLKs:                         1  out of     24     4%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 62    |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: 7.819ns (Maximum Frequency: 127.888MHz)
+   Minimum input arrival time before clock: No path found
+   Maximum output required time after clock: 4.310ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 7.819ns (frequency: 127.888MHz)
+  Total number of paths / destination ports: 3848 / 87
+-------------------------------------------------------------------------
+Delay:               7.819ns (Levels of Logic = 10)
+  Source:            d/cnt_5 (FF)
+  Destination:       d/data_0 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: d/cnt_5 to d/data_0
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FD:C->Q               2   0.591   0.622  d/cnt_5 (d/cnt_5)
+     LUT2:I0->O            1   0.704   0.000  d/local_cmp_eq0001_wg_lut<0> (d/local_cmp_eq0001_wg_lut<0>)
+     MUXCY:S->O            1   0.464   0.000  d/local_cmp_eq0001_wg_cy<0> (d/local_cmp_eq0001_wg_cy<0>)
+     MUXCY:CI->O           1   0.059   0.000  d/local_cmp_eq0001_wg_cy<1> (d/local_cmp_eq0001_wg_cy<1>)
+     MUXCY:CI->O           1   0.059   0.000  d/local_cmp_eq0001_wg_cy<2> (d/local_cmp_eq0001_wg_cy<2>)
+     MUXCY:CI->O           1   0.059   0.000  d/local_cmp_eq0001_wg_cy<3> (d/local_cmp_eq0001_wg_cy<3>)
+     MUXCY:CI->O           1   0.059   0.000  d/local_cmp_eq0001_wg_cy<4> (d/local_cmp_eq0001_wg_cy<4>)
+     MUXCY:CI->O           1   0.059   0.000  d/local_cmp_eq0001_wg_cy<5> (d/local_cmp_eq0001_wg_cy<5>)
+     MUXCY:CI->O          61   0.459   1.446  d/local_cmp_eq0001_wg_cy<6> (d/local_cmp_eq0001)
+     LUT2:I0->O            1   0.704   0.499  d/data_mux0000<3>32 (d/data_mux0000<3>32)
+     LUT4:I1->O            1   0.704   0.420  d/data_mux0000<3>43 (d/data_mux0000<3>43)
+     FDS:S                     0.911          d/data_0
+    ----------------------------------------
+    Total                      7.819ns (4.832ns logic, 2.987ns route)
+                                       (61.8% logic, 38.2% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 6 / 6
+-------------------------------------------------------------------------
+Offset:              4.310ns (Levels of Logic = 1)
+  Source:            d/LCD_E (FF)
+  Destination:       LCD_E (PAD)
+  Source Clock:      clk rising
+
+  Data Path: d/LCD_E to LCD_E
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDS:C->Q              2   0.591   0.447  d/LCD_E (d/LCD_E)
+     OBUF:I->O                 3.272          LCD_E_OBUF (LCD_E)
+    ----------------------------------------
+    Total                      4.310ns (3.863ns logic, 0.447ns route)
+                                       (89.6% logic, 10.4% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 8.00 secs
+Total CPU time to Xst completion: 7.50 secs
+ 
+--> 
+
+
+Total memory usage is 530132 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :   14 (   0 filtered)
+Number of infos    :    2 (   0 filtered)
+

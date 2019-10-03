@@ -1,0 +1,17 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7 (64-bit)
+# Build 321239 by xbuild on Fri Sep 27 19:24:36 MDT 2013
+# Start of session at: Mon Mar 25 16:23:53 2019
+# Process ID: 10869
+# Log file: /media/ssinghal/480A-D8B5/CS220Labs/Lab8_1/register/planAhead_run_4/planAhead.log
+# Journal file: /media/ssinghal/480A-D8B5/CS220Labs/Lab8_1/register/planAhead_run_4/planAhead.jou
+#-----------------------------------------------------------
+start_gui
+source /media/ssinghal/480A-D8B5/CS220Labs/Lab8_1/register/pa.fromHdl.tcl
+update_compile_order -fileset sim_1
+startgroup
+set_property package_pin K17 [get_ports z]
+endgroup
+set_property iostandard LVTTL [get_ports [list z]]
+set_property pulltype PULLDOWN [get_ports [list z]]
+save_constraints

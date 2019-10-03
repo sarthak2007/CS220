@@ -1,0 +1,864 @@
+Release 14.7 - xst P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.06 secs
+ 
+--> 
+Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.06 secs
+ 
+--> 
+Reading design: top.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "top.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "top"
+Output Format                      : NGC
+Target Device                      : xc3s500e-4-fg320
+
+---- Source Options
+Top Module Name                    : top
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "rot_event.v" in library work
+Compiling verilog file "regist.v" in library work
+Module <rot_event> compiled
+Compiling verilog file "driver.v" in library work
+Module <regist> compiled
+Compiling verilog file "top.v" in library work
+Module <driver> compiled
+Module <top> compiled
+No errors in compilation
+Analysis of file <"top.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <top> in library <work>.
+
+Analyzing hierarchy for module <rot_event> in library <work>.
+
+Analyzing hierarchy for module <regist> in library <work>.
+
+Analyzing hierarchy for module <driver> in library <work>.
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <top>.
+Module <top> is correct for synthesis.
+ 
+Analyzing module <rot_event> in library <work>.
+Module <rot_event> is correct for synthesis.
+ 
+Analyzing module <regist> in library <work>.
+Module <regist> is correct for synthesis.
+ 
+Analyzing module <driver> in library <work>.
+WARNING:Xst:790 - "driver.v" line 223: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "driver.v" line 233: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "driver.v" line 281: Index value(s) does not match array range, simulation mismatch.
+WARNING:Xst:790 - "driver.v" line 291: Index value(s) does not match array range, simulation mismatch.
+Module <driver> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+INFO:Xst:2679 - Register <first<127>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <first<126>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <first<119>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <first<118>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <first<111>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <first<110>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <first<103>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <first<102>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <first<95>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <first<94>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <first<87>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <first<86>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <first<85>> in unit <regist> has a constant value of 1 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <first<84>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <first<83>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <first<82>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <first<81>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <first<80>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <first<79>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <first<78>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <first<77>> in unit <regist> has a constant value of 1 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <first<76>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <first<75>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <first<74>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <first<73>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <first<72>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <first<71>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <first<70>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <first<69>> in unit <regist> has a constant value of 1 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <first<68>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <first<67>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <first<66>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <first<65>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <first<64>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <first<63>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <first<62>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <first<61>> in unit <regist> has a constant value of 1 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <first<60>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <first<59>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <first<58>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <first<57>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <first<56>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <first<55>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <first<54>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <first<53>> in unit <regist> has a constant value of 1 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <first<52>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <first<51>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <first<50>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <first<49>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <first<48>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <first<47>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <first<46>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <first<45>> in unit <regist> has a constant value of 1 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <first<44>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <first<43>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <first<42>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <first<41>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <first<40>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <first<39>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <first<38>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <first<37>> in unit <regist> has a constant value of 1 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <first<36>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <first<35>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <first<34>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <first<33>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <first<32>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <first<31>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <first<30>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <first<29>> in unit <regist> has a constant value of 1 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <first<28>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <first<27>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <first<26>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <first<25>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <first<24>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <first<23>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <first<22>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <first<21>> in unit <regist> has a constant value of 1 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <first<20>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <first<19>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <first<18>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <first<17>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <first<16>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <first<15>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <first<14>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <first<13>> in unit <regist> has a constant value of 1 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <first<12>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <first<11>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <first<10>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <first<9>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <first<8>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <first<7>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <first<6>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <first<5>> in unit <regist> has a constant value of 1 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <first<4>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <first<3>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <first<2>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <first<1>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <first<0>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <second<127>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <second<126>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <second<119>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <second<118>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <second<111>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <second<110>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <second<103>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <second<102>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <second<95>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <second<94>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <second<87>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <second<86>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <second<79>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <second<78>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <second<71>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <second<70>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <second<63>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <second<62>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <second<55>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <second<54>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <second<47>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <second<46>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <second<39>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <second<38>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <second<31>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <second<30>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <second<23>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <second<22>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <second<15>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <second<14>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <second<7>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <second<6>> in unit <regist> has a constant value of 0 during circuit operation. The register is replaced by logic.
+INFO:Xst:2679 - Register <LCD_W> in unit <driver> has a constant value of 0 during circuit operation. The register is replaced by logic.
+
+Synthesizing Unit <rot_event>.
+    Related source file is "rot_event.v".
+    Found 1-bit register for signal <rot_event>.
+    Summary:
+	inferred   1 D-type flip-flop(s).
+Unit <rot_event> synthesized.
+
+
+Synthesizing Unit <regist>.
+    Related source file is "regist.v".
+WARNING:Xst:1780 - Signal <read2_add> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1780 - Signal <b> is never used or assigned. This unconnected signal will be trimmed during the optimization process.
+    Found 32x16-bit dual-port RAM <Mram_regist> for signal <regist>.
+    Found 11-bit register for signal <cnt>.
+    Found 6-bit register for signal <first<125:120>>.
+    Found 6-bit register for signal <first<117:112>>.
+    Found 6-bit register for signal <first<109:104>>.
+    Found 6-bit register for signal <first<101:96>>.
+    Found 6-bit register for signal <first<93:88>>.
+    Found 6-bit register for signal <second<125:120>>.
+    Found 6-bit register for signal <second<117:112>>.
+    Found 6-bit register for signal <second<109:104>>.
+    Found 6-bit register for signal <second<101:96>>.
+    Found 6-bit register for signal <second<93:88>>.
+    Found 6-bit register for signal <second<85:80>>.
+    Found 6-bit register for signal <second<77:72>>.
+    Found 6-bit register for signal <second<69:64>>.
+    Found 6-bit register for signal <second<61:56>>.
+    Found 6-bit register for signal <second<53:48>>.
+    Found 6-bit register for signal <second<45:40>>.
+    Found 6-bit register for signal <second<37:32>>.
+    Found 6-bit register for signal <second<29:24>>.
+    Found 6-bit register for signal <second<21:16>>.
+    Found 6-bit register for signal <second<13:8>>.
+    Found 6-bit register for signal <second<5:0>>.
+    Found 16-bit register for signal <a>.
+    Found 6-bit adder for signal <first_103_96$add0000> created at line 78.
+    Found 6-bit adder for signal <first_103_96$add0001> created at line 122.
+    Found 6-bit adder for signal <first_111_104$add0000> created at line 77.
+    Found 6-bit adder for signal <first_111_104$add0001> created at line 121.
+    Found 6-bit adder for signal <first_119_112$add0000> created at line 76.
+    Found 6-bit adder for signal <first_119_112$add0001> created at line 120.
+    Found 6-bit adder for signal <first_127_120$add0000> created at line 75.
+    Found 6-bit adder for signal <first_127_120$add0001> created at line 119.
+    Found 6-bit adder for signal <first_95_88$add0000> created at line 79.
+    Found 6-bit adder for signal <first_95_88$add0001> created at line 123.
+    Found 3-bit register for signal <inst>.
+    Found 1-bit register for signal <prev>.
+    Found 5-bit register for signal <read_add1>.
+    Found 6-bit adder for signal <second_103_96$add0000> created at line 84.
+    Found 6-bit adder for signal <second_103_96$add0001> created at line 128.
+    Found 6-bit adder for signal <second_111_104$add0000> created at line 83.
+    Found 6-bit adder for signal <second_111_104$add0001> created at line 127.
+    Found 6-bit adder for signal <second_119_112$add0000> created at line 82.
+    Found 6-bit adder for signal <second_119_112$add0001> created at line 126.
+    Found 6-bit adder for signal <second_127_120$add0000> created at line 81.
+    Found 6-bit adder for signal <second_127_120$add0001> created at line 125.
+    Found 6-bit adder for signal <second_15_8$add0000> created at line 95.
+    Found 6-bit adder for signal <second_15_8$add0001> created at line 139.
+    Found 6-bit adder for signal <second_23_16$add0000> created at line 94.
+    Found 6-bit adder for signal <second_23_16$add0001> created at line 138.
+    Found 6-bit adder for signal <second_31_24$add0000> created at line 93.
+    Found 6-bit adder for signal <second_31_24$add0001> created at line 137.
+    Found 6-bit adder for signal <second_39_32$add0000> created at line 92.
+    Found 6-bit adder for signal <second_39_32$add0001> created at line 136.
+    Found 6-bit adder for signal <second_47_40$add0000> created at line 91.
+    Found 6-bit adder for signal <second_47_40$add0001> created at line 135.
+    Found 6-bit adder for signal <second_55_48$add0000> created at line 90.
+    Found 6-bit adder for signal <second_55_48$add0001> created at line 134.
+    Found 6-bit adder for signal <second_63_56$add0000> created at line 89.
+    Found 6-bit adder for signal <second_63_56$add0001> created at line 133.
+    Found 6-bit adder for signal <second_71_64$add0000> created at line 88.
+    Found 6-bit adder for signal <second_71_64$add0001> created at line 132.
+    Found 6-bit adder for signal <second_79_72$add0000> created at line 87.
+    Found 6-bit adder for signal <second_79_72$add0001> created at line 131.
+    Found 6-bit adder for signal <second_7_0$add0000> created at line 96.
+    Found 6-bit adder for signal <second_7_0$add0001> created at line 140.
+    Found 6-bit adder for signal <second_87_80$add0000> created at line 86.
+    Found 6-bit adder for signal <second_87_80$add0001> created at line 130.
+    Found 6-bit adder for signal <second_95_88$add0000> created at line 85.
+    Found 6-bit adder for signal <second_95_88$add0001> created at line 129.
+    Found 5-bit register for signal <write_add>.
+    Found 16-bit register for signal <write_data>.
+    Summary:
+	inferred   1 RAM(s).
+	inferred 183 D-type flip-flop(s).
+	inferred  42 Adder/Subtractor(s).
+Unit <regist> synthesized.
+
+
+Synthesizing Unit <driver>.
+    Related source file is "driver.v".
+    Found finite state machine <FSM_0> for signal <local>.
+    -----------------------------------------------------------------------
+    | States             | 6                                              |
+    | Transitions        | 122                                            |
+    | Inputs             | 11                                             |
+    | Outputs            | 8                                              |
+    | Clock              | clk                       (rising_edge)        |
+    | Clock enable       | local$cmp_eq0000          (positive)           |
+    | Power Up State     | 000000                                         |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found finite state machine <FSM_1> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 9                                              |
+    | Transitions        | 28                                             |
+    | Inputs             | 5                                              |
+    | Outputs            | 9                                              |
+    | Clock              | clk                       (rising_edge)        |
+    | Clock enable       | local$cmp_eq0000          (positive)           |
+    | Power Up State     | 000001                                         |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 1-bit register for signal <LCD_E>.
+    Found 1-bit register for signal <LCD_RS>.
+    Found 4-bit register for signal <data>.
+    Found 26-bit up counter for signal <cnt>.
+    Found 26-bit adder for signal <cnt$share0000>.
+    Found 6-bit register for signal <count>.
+    Found 6-bit adder for signal <count$addsub0000>.
+    Found 9-bit register for signal <pos>.
+    Found 9-bit subtractor for signal <pos$share0000>.
+    Found 9-bit register for signal <pos1>.
+    Found 9-bit subtractor for signal <pos1$addsub0000> created at line 285.
+    Found 3-bit register for signal <temp>.
+    Found 3-bit adder for signal <temp$addsub0000> created at line 78.
+    Summary:
+	inferred   2 Finite State Machine(s).
+	inferred   1 Counter(s).
+	inferred  33 D-type flip-flop(s).
+	inferred   5 Adder/Subtractor(s).
+Unit <driver> synthesized.
+
+
+Synthesizing Unit <top>.
+    Related source file is "top.v".
+Unit <top> synthesized.
+
+INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# RAMs                                                 : 1
+ 32x16-bit dual-port RAM                               : 1
+# Adders/Subtractors                                   : 47
+ 26-bit adder                                          : 1
+ 3-bit adder                                           : 1
+ 6-bit adder                                           : 43
+ 9-bit subtractor                                      : 2
+# Counters                                             : 1
+ 26-bit up counter                                     : 1
+# Registers                                            : 164
+ 1-bit register                                        : 156
+ 11-bit register                                       : 1
+ 16-bit register                                       : 1
+ 3-bit register                                        : 2
+ 4-bit register                                        : 1
+ 6-bit register                                        : 1
+ 9-bit register                                        : 2
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Analyzing FSM <FSM_1> for best encoding.
+Optimizing FSM <de/state/FSM> on signal <state[1:4]> with sequential encoding.
+--------------------
+ State  | Encoding
+--------------------
+ 000001 | 0000
+ 000010 | 0001
+ 000011 | 0010
+ 000100 | 0011
+ 000101 | 0100
+ 000110 | 0101
+ 000111 | 0110
+ 001000 | 0111
+ 001001 | 1000
+--------------------
+Analyzing FSM <FSM_0> for best encoding.
+Optimizing FSM <de/local/FSM> on signal <local[1:6]> with one-hot encoding.
+--------------------
+ State  | Encoding
+--------------------
+ 000000 | 000001
+ 000001 | 000010
+ 000010 | 000100
+ 000011 | 001000
+ 000100 | 010000
+ 000101 | 100000
+--------------------
+
+Synthesizing (advanced) Unit <regist>.
+INFO:Xst:3231 - The small RAM <Mram_regist> will be implemented on LUTs in order to maximize performance and save block RAM resources. If you want to force its implementation on block, use option/constraint ram_style.
+    -----------------------------------------------------------------------
+    | ram_type           | Distributed                         |          |
+    -----------------------------------------------------------------------
+    | Port A                                                              |
+    |     aspect ratio   | 32-word x 16-bit                    |          |
+    |     clkA           | connected to signal <clk>           | rise     |
+    |     weA            | connected to signal <_cmp_eq0000_0> | high     |
+    |     addrA          | connected to signal <write_add>     |          |
+    |     diA            | connected to signal <write_data>    |          |
+    -----------------------------------------------------------------------
+    | Port B                                                              |
+    |     aspect ratio   | 32-word x 16-bit                    |          |
+    |     addrB          | connected to signal <read_add1>     |          |
+    |     doB            | connected to internal node          |          |
+    -----------------------------------------------------------------------
+Unit <regist> synthesized (advanced).
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# FSMs                                                 : 2
+# RAMs                                                 : 1
+ 32x16-bit dual-port distributed RAM                   : 1
+# Adders/Subtractors                                   : 47
+ 26-bit adder                                          : 1
+ 3-bit adder                                           : 1
+ 6-bit adder                                           : 43
+ 9-bit subtractor                                      : 2
+# Counters                                             : 1
+ 26-bit up counter                                     : 1
+# Registers                                            : 217
+ Flip-Flops                                            : 217
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1293 - FF/Latch <cnt_4> has a constant value of 0 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cnt_5> has a constant value of 0 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cnt_6> has a constant value of 0 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cnt_7> has a constant value of 0 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cnt_8> has a constant value of 0 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cnt_9> has a constant value of 0 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <cnt_10> has a constant value of 0 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <second_81> (without init value) has a constant value of 0 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <second_74> (without init value) has a constant value of 0 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <second_75> (without init value) has a constant value of 0 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <second_73> (without init value) has a constant value of 0 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <second_66> (without init value) has a constant value of 0 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <second_67> (without init value) has a constant value of 0 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <second_65> (without init value) has a constant value of 0 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <second_57> (without init value) has a constant value of 0 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <second_59> (without init value) has a constant value of 0 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <second_58> (without init value) has a constant value of 0 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <second_49> (without init value) has a constant value of 0 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <second_51> (without init value) has a constant value of 0 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <second_50> (without init value) has a constant value of 0 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <second_41> (without init value) has a constant value of 0 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <second_43> (without init value) has a constant value of 0 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <second_42> (without init value) has a constant value of 0 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <second_33> (without init value) has a constant value of 0 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <second_35> (without init value) has a constant value of 0 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <second_34> (without init value) has a constant value of 0 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <second_27> (without init value) has a constant value of 0 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <second_26> (without init value) has a constant value of 0 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <second_25> (without init value) has a constant value of 0 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <second_19> (without init value) has a constant value of 0 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <second_18> (without init value) has a constant value of 0 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <second_17> (without init value) has a constant value of 0 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <second_11> (without init value) has a constant value of 0 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <second_10> (without init value) has a constant value of 0 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <second_9> (without init value) has a constant value of 0 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <second_3> (without init value) has a constant value of 0 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <second_2> (without init value) has a constant value of 0 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <second_1> (without init value) has a constant value of 0 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <first_123> (without init value) has a constant value of 0 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <first_122> (without init value) has a constant value of 0 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <first_121> (without init value) has a constant value of 0 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <first_113> (without init value) has a constant value of 0 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <first_115> (without init value) has a constant value of 0 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <first_114> (without init value) has a constant value of 0 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <first_105> (without init value) has a constant value of 0 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <first_107> (without init value) has a constant value of 0 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <first_106> (without init value) has a constant value of 0 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <first_97> (without init value) has a constant value of 0 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <first_99> (without init value) has a constant value of 0 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <first_98> (without init value) has a constant value of 0 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <first_91> (without init value) has a constant value of 0 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <first_90> (without init value) has a constant value of 0 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <first_89> (without init value) has a constant value of 0 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <second_123> (without init value) has a constant value of 0 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <second_122> (without init value) has a constant value of 0 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <second_121> (without init value) has a constant value of 0 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <second_115> (without init value) has a constant value of 0 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <second_114> (without init value) has a constant value of 0 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <second_113> (without init value) has a constant value of 0 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <second_107> (without init value) has a constant value of 0 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <second_106> (without init value) has a constant value of 0 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <second_105> (without init value) has a constant value of 0 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <second_99> (without init value) has a constant value of 0 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <second_98> (without init value) has a constant value of 0 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <second_97> (without init value) has a constant value of 0 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <second_90> (without init value) has a constant value of 0 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <second_91> (without init value) has a constant value of 0 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <second_89> (without init value) has a constant value of 0 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <second_82> (without init value) has a constant value of 0 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <second_83> (without init value) has a constant value of 0 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <pos_7> of sequential type is unconnected in block <driver>.
+WARNING:Xst:2677 - Node <pos_8> of sequential type is unconnected in block <driver>.
+WARNING:Xst:2677 - Node <pos1_7> of sequential type is unconnected in block <driver>.
+WARNING:Xst:2677 - Node <pos1_8> of sequential type is unconnected in block <driver>.
+
+Optimizing unit <top> ...
+
+Optimizing unit <regist> ...
+WARNING:Xst:1710 - FF/Latch <second_84> (without init value) has a constant value of 1 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <second_77> (without init value) has a constant value of 1 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <second_76> (without init value) has a constant value of 1 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <second_69> (without init value) has a constant value of 1 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <second_68> (without init value) has a constant value of 1 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <second_61> (without init value) has a constant value of 1 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <second_60> (without init value) has a constant value of 1 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <second_52> (without init value) has a constant value of 1 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <second_53> (without init value) has a constant value of 1 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <second_44> (without init value) has a constant value of 1 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <second_45> (without init value) has a constant value of 1 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <second_36> (without init value) has a constant value of 1 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <second_37> (without init value) has a constant value of 1 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <second_29> (without init value) has a constant value of 1 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <second_28> (without init value) has a constant value of 1 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <second_21> (without init value) has a constant value of 1 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <second_20> (without init value) has a constant value of 1 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <second_13> (without init value) has a constant value of 1 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <second_12> (without init value) has a constant value of 1 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <second_5> (without init value) has a constant value of 1 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <second_4> (without init value) has a constant value of 1 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <first_125> (without init value) has a constant value of 1 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <first_124> (without init value) has a constant value of 1 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <first_116> (without init value) has a constant value of 1 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <first_117> (without init value) has a constant value of 1 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <first_108> (without init value) has a constant value of 1 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <first_109> (without init value) has a constant value of 1 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <first_100> (without init value) has a constant value of 1 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <first_101> (without init value) has a constant value of 1 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <first_92> (without init value) has a constant value of 1 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <first_93> (without init value) has a constant value of 1 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <second_125> (without init value) has a constant value of 1 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <second_124> (without init value) has a constant value of 1 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <second_117> (without init value) has a constant value of 1 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <second_116> (without init value) has a constant value of 1 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <second_109> (without init value) has a constant value of 1 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <second_108> (without init value) has a constant value of 1 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <second_101> (without init value) has a constant value of 1 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <second_100> (without init value) has a constant value of 1 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <second_93> (without init value) has a constant value of 1 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <second_92> (without init value) has a constant value of 1 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <second_85> (without init value) has a constant value of 1 in block <regist>. This FF/Latch will be trimmed during the optimization process.
+
+Optimizing unit <driver> ...
+WARNING:Xst:1293 - FF/Latch <pos_0> has a constant value of 1 in block <driver>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <pos_1> has a constant value of 1 in block <driver>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <pos1_0> has a constant value of 1 in block <driver>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <pos1_1> has a constant value of 1 in block <driver>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <temp_2> has a constant value of 0 in block <driver>. This FF/Latch will be trimmed during the optimization process.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block top, actual ratio is 4.
+FlipFlop de/state_FSM_FFd2 has been replicated 1 time(s)
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 133
+ Flip-Flops                                            : 133
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : top.ngr
+Top Level Output File Name         : top
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 14
+
+Cell Usage :
+# BELS                             : 494
+#      GND                         : 1
+#      INV                         : 2
+#      LUT1                        : 50
+#      LUT2                        : 16
+#      LUT2_D                      : 2
+#      LUT2_L                      : 3
+#      LUT3                        : 90
+#      LUT3_D                      : 10
+#      LUT3_L                      : 7
+#      LUT4                        : 132
+#      LUT4_D                      : 12
+#      LUT4_L                      : 49
+#      MUXCY                       : 57
+#      MUXF5                       : 10
+#      VCC                         : 1
+#      XORCY                       : 52
+# FlipFlops/Latches                : 133
+#      FD                          : 27
+#      FDE                         : 105
+#      FDRE                        : 1
+# RAMS                             : 32
+#      RAM16X1D                    : 32
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 13
+#      IBUF                        : 6
+#      OBUF                        : 7
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s500efg320-4 
+
+ Number of Slices:                      216  out of   4656     4%  
+ Number of Slice Flip Flops:            133  out of   9312     1%  
+ Number of 4 input LUTs:                437  out of   9312     4%  
+    Number used as logic:               373
+    Number used as RAMs:                 64
+ Number of IOs:                          14
+ Number of bonded IOBs:                  14  out of    232     6%  
+ Number of GCLKs:                         1  out of     24     4%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 165   |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: 7.448ns (Maximum Frequency: 134.267MHz)
+   Minimum input arrival time before clock: 3.875ns
+   Maximum output required time after clock: 4.496ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 7.448ns (frequency: 134.267MHz)
+  Total number of paths / destination ports: 6183 / 528
+-------------------------------------------------------------------------
+Delay:               7.448ns (Levels of Logic = 5)
+  Source:            de/local_FSM_FFd5 (FF)
+  Destination:       de/data_1 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: de/local_FSM_FFd5 to de/data_1
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q             34   0.591   1.342  de/local_FSM_FFd5 (de/local_FSM_FFd5)
+     LUT2_D:I1->O          6   0.704   0.704  de/data_mux0000<3>41 (de/N23)
+     LUT4:I2->O            1   0.704   0.455  de/data_mux0000<0>3111_SW0_SW1_F (N260)
+     LUT3:I2->O            1   0.704   0.424  de/data_mux0000<0>3111_SW0_SW11 (N248)
+     LUT4_L:I3->LO         1   0.704   0.104  de/data_mux0000<2>9_SW0 (N235)
+     LUT4:I3->O            1   0.704   0.000  de/data_mux0000<2>247 (de/data_mux0000<2>)
+     FDE:D                     0.308          de/data_1
+    ----------------------------------------
+    Total                      7.448ns (4.419ns logic, 3.029ns route)
+                                       (59.3% logic, 40.7% route)
+
+=========================================================================
+Timing constraint: Default OFFSET IN BEFORE for Clock 'clk'
+  Total number of paths / destination ports: 33 / 31
+-------------------------------------------------------------------------
+Offset:              3.875ns (Levels of Logic = 2)
+  Source:            rot_a (PAD)
+  Destination:       u1/rot_event (FF)
+  Destination Clock: clk rising
+
+  Data Path: rot_a to u1/rot_event
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     IBUF:I->O             2   1.218   0.622  rot_a_IBUF (rot_a_IBUF)
+     LUT2:I0->O            1   0.704   0.420  u1/rot_event_and00011 (u1/rot_event_not0001_inv)
+     FDRE:R                    0.911          u1/rot_event
+    ----------------------------------------
+    Total                      3.875ns (2.833ns logic, 1.042ns route)
+                                       (73.1% logic, 26.9% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 6 / 6
+-------------------------------------------------------------------------
+Offset:              4.496ns (Levels of Logic = 1)
+  Source:            de/data_1 (FF)
+  Destination:       data<1> (PAD)
+  Source Clock:      clk rising
+
+  Data Path: de/data_1 to data<1>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q              5   0.591   0.633  de/data_1 (de/data_1)
+     OBUF:I->O                 3.272          data_1_OBUF (data<1>)
+    ----------------------------------------
+    Total                      4.496ns (3.863ns logic, 0.633ns route)
+                                       (85.9% logic, 14.1% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 11.00 secs
+Total CPU time to Xst completion: 10.59 secs
+ 
+--> 
+
+
+Total memory usage is 547148 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :  127 (   0 filtered)
+Number of infos    :  133 (   0 filtered)
+

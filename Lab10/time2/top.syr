@@ -1,0 +1,576 @@
+Release 14.7 - xst P.20131013 (lin64)
+Copyright (c) 1995-2013 Xilinx, Inc.  All rights reserved.
+--> 
+Parameter TMPDIR set to xst/projnav.tmp
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.10 secs
+ 
+--> 
+Parameter xsthdpdir set to xst
+
+
+Total REAL time to Xst completion: 0.00 secs
+Total CPU time to Xst completion: 0.11 secs
+ 
+--> 
+Reading design: top.prj
+
+TABLE OF CONTENTS
+  1) Synthesis Options Summary
+  2) HDL Compilation
+  3) Design Hierarchy Analysis
+  4) HDL Analysis
+  5) HDL Synthesis
+     5.1) HDL Synthesis Report
+  6) Advanced HDL Synthesis
+     6.1) Advanced HDL Synthesis Report
+  7) Low Level Synthesis
+  8) Partition Report
+  9) Final Report
+	9.1) Device utilization summary
+	9.2) Partition Resource Summary
+	9.3) TIMING REPORT
+
+
+=========================================================================
+*                      Synthesis Options Summary                        *
+=========================================================================
+---- Source Parameters
+Input File Name                    : "top.prj"
+Input Format                       : mixed
+Ignore Synthesis Constraint File   : NO
+
+---- Target Parameters
+Output File Name                   : "top"
+Output Format                      : NGC
+Target Device                      : xc3s500e-4-fg320
+
+---- Source Options
+Top Module Name                    : top
+Automatic FSM Extraction           : YES
+FSM Encoding Algorithm             : Auto
+Safe Implementation                : No
+FSM Style                          : LUT
+RAM Extraction                     : Yes
+RAM Style                          : Auto
+ROM Extraction                     : Yes
+Mux Style                          : Auto
+Decoder Extraction                 : YES
+Priority Encoder Extraction        : Yes
+Shift Register Extraction          : YES
+Logical Shifter Extraction         : YES
+XOR Collapsing                     : YES
+ROM Style                          : Auto
+Mux Extraction                     : Yes
+Resource Sharing                   : YES
+Asynchronous To Synchronous        : NO
+Multiplier Style                   : Auto
+Automatic Register Balancing       : No
+
+---- Target Options
+Add IO Buffers                     : YES
+Global Maximum Fanout              : 100000
+Add Generic Clock Buffer(BUFG)     : 24
+Register Duplication               : YES
+Slice Packing                      : YES
+Optimize Instantiated Primitives   : NO
+Use Clock Enable                   : Yes
+Use Synchronous Set                : Yes
+Use Synchronous Reset              : Yes
+Pack IO Registers into IOBs        : Auto
+Equivalent register Removal        : YES
+
+---- General Options
+Optimization Goal                  : Speed
+Optimization Effort                : 1
+Keep Hierarchy                     : No
+Netlist Hierarchy                  : As_Optimized
+RTL Output                         : Yes
+Global Optimization                : AllClockNets
+Read Cores                         : YES
+Write Timing Constraints           : NO
+Cross Clock Analysis               : NO
+Hierarchy Separator                : /
+Bus Delimiter                      : <>
+Case Specifier                     : Maintain
+Slice Utilization Ratio            : 100
+BRAM Utilization Ratio             : 100
+Verilog 2001                       : YES
+Auto BRAM Packing                  : NO
+Slice Utilization Ratio Delta      : 5
+
+=========================================================================
+
+
+=========================================================================
+*                          HDL Compilation                              *
+=========================================================================
+Compiling verilog file "top.v" in library work
+Module <top> compiled
+No errors in compilation
+Analysis of file <"top.prj"> succeeded.
+ 
+
+=========================================================================
+*                     Design Hierarchy Analysis                         *
+=========================================================================
+Analyzing hierarchy for module <top> in library <work>.
+
+
+=========================================================================
+*                            HDL Analysis                               *
+=========================================================================
+Analyzing top module <top>.
+INFO:Xst:1433 - Contents of array <inst> may be accessed with an index that exceeds the array size. This could cause simulation mismatch.
+INFO:Xst:1433 - Contents of array <data> may be accessed with an index that exceeds the array size. This could cause simulation mismatch.
+Module <top> is correct for synthesis.
+ 
+
+=========================================================================
+*                           HDL Synthesis                               *
+=========================================================================
+
+Performing bidirectional port resolution...
+
+Synthesizing Unit <top>.
+    Related source file is "top.v".
+WARNING:Xst:646 - Signal <jump<25:8>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1781 - Signal <inst> is used but never assigned. Tied to default value.
+WARNING:Xst:646 - Signal <immediate<15:8>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+WARNING:Xst:1781 - Signal <data> is used but never assigned. Tied to default value.
+WARNING:Xst:646 - Signal <add<7:4>> is assigned but never used. This unconnected signal will be trimmed during the optimization process.
+    Found finite state machine <FSM_0> for signal <state>.
+    -----------------------------------------------------------------------
+    | States             | 7                                              |
+    | Transitions        | 8                                              |
+    | Inputs             | 1                                              |
+    | Outputs            | 11                                             |
+    | Clock              | clk                       (rising_edge)        |
+    | Power Up State     | 0000000                                        |
+    | Encoding           | automatic                                      |
+    | Implementation     | LUT                                            |
+    -----------------------------------------------------------------------
+    Found 11x8-bit ROM for signal <$varindex0001> created at line 163.
+    Found 14x32-bit ROM for signal <$varindex0000> created at line 92.
+    Found 8-bit register for signal <led>.
+    Found 8-bit register for signal <add>.
+    Found 8-bit adder for signal <add$add0000> created at line 153.
+    Found 6-bit register for signal <func>.
+    Found 16-bit register for signal <immediate>.
+    Found 1-bit register for signal <invalid>.
+    Found 26-bit register for signal <jump>.
+    Found 6-bit register for signal <opcode>.
+    Found 8-bit register for signal <pc>.
+    Found 8-bit adder for signal <pc$add0000> created at line 123.
+    Found 8-bit comparator equal for signal <pc$cmp_eq0001> created at line 145.
+    Found 8-bit comparator not equal for signal <pc$cmp_ne0009> created at line 149.
+    Found 8-bit adder for signal <pc$share0000>.
+    Found 5-bit register for signal <rd>.
+    Found 256-bit register for signal <regis>.
+    Found 5-bit register for signal <rs>.
+    Found 5-bit register for signal <rt>.
+    Found 8-bit register for signal <source1>.
+    Found 8-bit register for signal <source2>.
+    Found 8-bit comparator less for signal <state$cmp_lt0000> created at line 184.
+    Found 8-bit register for signal <store>.
+    Found 8-bit adder for signal <store$addsub0000> created at line 122.
+    Found 8-bit comparator less for signal <store$cmp_lt0000> created at line 126.
+    Found 32-bit register for signal <temp>.
+INFO:Xst:738 - HDL ADVISOR - 256 flip-flops were inferred for signal <regis>. You may be trying to describe a RAM in a way that is incompatible with block and distributed RAM resources available on Xilinx devices, or with a specific template that is not supported. Please review the Xilinx resources documentation and the XST user manual for coding guidelines. Taking advantage of RAM resources will lead to improved device usage and reduced synthesis time.
+    Summary:
+	inferred   1 Finite State Machine(s).
+	inferred   2 ROM(s).
+	inferred 406 D-type flip-flop(s).
+	inferred   4 Adder/Subtractor(s).
+	inferred   4 Comparator(s).
+	inferred  16 Multiplexer(s).
+Unit <top> synthesized.
+
+INFO:Xst:1767 - HDL ADVISOR - Resource sharing has identified that some arithmetic operations in this design can share the same physical resources for reduced device utilization. For improved clock frequency you may try to disable resource sharing.
+
+=========================================================================
+HDL Synthesis Report
+
+Macro Statistics
+# ROMs                                                 : 2
+ 11x8-bit ROM                                          : 1
+ 14x32-bit ROM                                         : 1
+# Adders/Subtractors                                   : 4
+ 8-bit adder                                           : 4
+# Registers                                            : 47
+ 1-bit register                                        : 1
+ 16-bit register                                       : 1
+ 26-bit register                                       : 1
+ 32-bit register                                       : 1
+ 5-bit register                                        : 3
+ 6-bit register                                        : 2
+ 8-bit register                                        : 38
+# Comparators                                          : 4
+ 8-bit comparator equal                                : 1
+ 8-bit comparator less                                 : 2
+ 8-bit comparator not equal                            : 1
+# Multiplexers                                         : 2
+ 8-bit 32-to-1 multiplexer                             : 2
+
+=========================================================================
+
+=========================================================================
+*                       Advanced HDL Synthesis                          *
+=========================================================================
+
+Analyzing FSM <FSM_0> for best encoding.
+Optimizing FSM <state/FSM> on signal <state[1:7]> with one-hot encoding.
+---------------------
+ State   | Encoding
+---------------------
+ 0000000 | 0000001
+ 0000001 | 0000010
+ 0000010 | 0000100
+ 0000011 | 0001000
+ 0000100 | 0010000
+ 0000101 | 0100000
+ 0000110 | 1000000
+---------------------
+WARNING:Xst:1426 - The value init of the FF/Latch invalid hinder the constant cleaning in the block top.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1293 - FF/Latch <regis_0_0> has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <regis_0_1> has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <regis_0_2> has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <regis_0_3> has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <regis_0_4> has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <regis_0_5> has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <regis_0_6> has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <regis_0_7> has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:2677 - Node <temp_8> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <temp_9> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <temp_10> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <jump_8> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <jump_9> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <jump_10> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <jump_11> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <jump_12> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <jump_13> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <jump_14> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <jump_15> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <jump_16> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <jump_17> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <jump_18> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <jump_19> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <jump_20> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <jump_21> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <jump_22> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <jump_23> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <jump_24> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <jump_25> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <immediate_8> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <immediate_9> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <immediate_10> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <immediate_11> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <immediate_12> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <immediate_13> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <immediate_14> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <immediate_15> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <add_4> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <add_5> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <add_6> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <add_7> of sequential type is unconnected in block <top>.
+
+Synthesizing (advanced) Unit <top>.
+INFO:Xst:3034 - In order to maximize performance and save block RAM resources, the small ROM <Mrom__varindex0001> will be implemented on LUT. If you want to force its implementation on block, use option/constraint rom_style.
+INFO:Xst:3034 - In order to maximize performance and save block RAM resources, the small ROM <Mrom__varindex0000> will be implemented on LUT. If you want to force its implementation on block, use option/constraint rom_style.
+Unit <top> synthesized (advanced).
+WARNING:Xst:2677 - Node <temp_8> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <temp_9> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <temp_10> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <jump_8> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <jump_9> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <jump_10> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <jump_11> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <jump_12> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <jump_13> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <jump_14> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <jump_15> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <jump_16> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <jump_17> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <jump_18> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <jump_19> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <jump_20> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <jump_21> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <jump_22> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <jump_23> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <jump_24> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <jump_25> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <immediate_8> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <immediate_9> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <immediate_10> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <immediate_11> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <immediate_12> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <immediate_13> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <immediate_14> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <immediate_15> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <add_4> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <add_5> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <add_6> of sequential type is unconnected in block <top>.
+WARNING:Xst:2677 - Node <add_7> of sequential type is unconnected in block <top>.
+
+=========================================================================
+Advanced HDL Synthesis Report
+
+Macro Statistics
+# FSMs                                                 : 1
+# ROMs                                                 : 2
+ 11x8-bit ROM                                          : 1
+ 14x32-bit ROM                                         : 1
+# Adders/Subtractors                                   : 4
+ 8-bit adder                                           : 4
+# Registers                                            : 373
+ Flip-Flops                                            : 373
+# Comparators                                          : 4
+ 8-bit comparator equal                                : 1
+ 8-bit comparator less                                 : 2
+ 8-bit comparator not equal                            : 1
+# Multiplexers                                         : 16
+ 1-bit 32-to-1 multiplexer                             : 16
+
+=========================================================================
+
+=========================================================================
+*                         Low Level Synthesis                           *
+=========================================================================
+WARNING:Xst:1426 - The value init of the FF/Latch invalid hinder the constant cleaning in the block top.
+   You should achieve better results by setting this init to 1.
+WARNING:Xst:1293 - FF/Latch <regis_0_0> has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <regis_0_1> has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <regis_0_2> has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <regis_0_3> has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <regis_0_4> has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <regis_0_5> has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <regis_0_6> has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <regis_0_7> has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1710 - FF/Latch <temp_19> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <temp_20> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <temp_30> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <opcode_4> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <rt_3> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1895 - Due to other FF/Latch trimming, FF/Latch <rt_4> (without init value) has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+INFO:Xst:2261 - The FF/Latch <temp_4> in Unit <top> is equivalent to the following 5 FFs/Latches, which will be removed : <temp_6> <temp_7> <temp_11> <temp_14> <temp_15> 
+INFO:Xst:2261 - The FF/Latch <temp_24> in Unit <top> is equivalent to the following FF/Latch, which will be removed : <temp_25> 
+INFO:Xst:2261 - The FF/Latch <jump_4> in Unit <top> is equivalent to the following 2 FFs/Latches, which will be removed : <jump_6> <jump_7> 
+INFO:Xst:2261 - The FF/Latch <immediate_4> in Unit <top> is equivalent to the following 2 FFs/Latches, which will be removed : <immediate_6> <immediate_7> 
+INFO:Xst:2261 - The FF/Latch <rd_0> in Unit <top> is equivalent to the following 3 FFs/Latches, which will be removed : <rd_3> <rd_4> <func_4> 
+
+Optimizing unit <top> ...
+INFO:Xst:2261 - The FF/Latch <regis_8_7> in Unit <top> is equivalent to the following 19 FFs/Latches, which will be removed : <regis_9_7> <regis_10_7> <regis_11_7> <regis_12_7> <regis_15_7> <regis_13_7> <regis_14_7> <regis_16_7> <regis_17_7> <regis_18_7> <regis_19_7> <regis_20_7> <regis_21_7> <regis_22_7> <regis_23_7> <regis_24_7> <regis_26_7> <regis_30_7> <regis_28_7> 
+INFO:Xst:2261 - The FF/Latch <regis_8_0> in Unit <top> is equivalent to the following 19 FFs/Latches, which will be removed : <regis_9_0> <regis_10_0> <regis_11_0> <regis_12_0> <regis_15_0> <regis_13_0> <regis_14_0> <regis_16_0> <regis_17_0> <regis_18_0> <regis_19_0> <regis_20_0> <regis_21_0> <regis_22_0> <regis_23_0> <regis_24_0> <regis_26_0> <regis_30_0> <regis_28_0> 
+INFO:Xst:2261 - The FF/Latch <regis_8_1> in Unit <top> is equivalent to the following 19 FFs/Latches, which will be removed : <regis_9_1> <regis_10_1> <regis_11_1> <regis_12_1> <regis_15_1> <regis_13_1> <regis_14_1> <regis_16_1> <regis_17_1> <regis_18_1> <regis_19_1> <regis_20_1> <regis_21_1> <regis_22_1> <regis_23_1> <regis_24_1> <regis_26_1> <regis_30_1> <regis_28_1> 
+INFO:Xst:2261 - The FF/Latch <regis_8_2> in Unit <top> is equivalent to the following 19 FFs/Latches, which will be removed : <regis_9_2> <regis_10_2> <regis_11_2> <regis_12_2> <regis_15_2> <regis_13_2> <regis_14_2> <regis_16_2> <regis_17_2> <regis_18_2> <regis_19_2> <regis_20_2> <regis_21_2> <regis_22_2> <regis_23_2> <regis_24_2> <regis_26_2> <regis_30_2> <regis_28_2> 
+INFO:Xst:2261 - The FF/Latch <regis_8_3> in Unit <top> is equivalent to the following 19 FFs/Latches, which will be removed : <regis_9_3> <regis_10_3> <regis_11_3> <regis_12_3> <regis_15_3> <regis_13_3> <regis_14_3> <regis_16_3> <regis_17_3> <regis_18_3> <regis_19_3> <regis_20_3> <regis_21_3> <regis_22_3> <regis_23_3> <regis_24_3> <regis_26_3> <regis_30_3> <regis_28_3> 
+INFO:Xst:2261 - The FF/Latch <regis_8_4> in Unit <top> is equivalent to the following 19 FFs/Latches, which will be removed : <regis_9_4> <regis_10_4> <regis_11_4> <regis_12_4> <regis_15_4> <regis_13_4> <regis_14_4> <regis_16_4> <regis_17_4> <regis_18_4> <regis_19_4> <regis_20_4> <regis_21_4> <regis_22_4> <regis_23_4> <regis_24_4> <regis_26_4> <regis_30_4> <regis_28_4> 
+INFO:Xst:2261 - The FF/Latch <regis_8_5> in Unit <top> is equivalent to the following 19 FFs/Latches, which will be removed : <regis_9_5> <regis_10_5> <regis_11_5> <regis_12_5> <regis_15_5> <regis_13_5> <regis_14_5> <regis_16_5> <regis_17_5> <regis_18_5> <regis_19_5> <regis_20_5> <regis_21_5> <regis_22_5> <regis_23_5> <regis_24_5> <regis_26_5> <regis_30_5> <regis_28_5> 
+INFO:Xst:2261 - The FF/Latch <regis_8_6> in Unit <top> is equivalent to the following 19 FFs/Latches, which will be removed : <regis_9_6> <regis_10_6> <regis_11_6> <regis_12_6> <regis_15_6> <regis_13_6> <regis_14_6> <regis_16_6> <regis_17_6> <regis_18_6> <regis_19_6> <regis_20_6> <regis_21_6> <regis_22_6> <regis_23_6> <regis_24_6> <regis_26_6> <regis_30_6> <regis_28_6> 
+WARNING:Xst:1293 - FF/Latch <regis_8_0> has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <regis_8_1> has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <regis_8_2> has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <regis_8_3> has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <regis_8_4> has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <regis_8_5> has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <regis_8_6> has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <regis_8_7> has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1293 - FF/Latch <regis_8_0> has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <regis_8_1> has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <regis_8_2> has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <regis_8_3> has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <regis_8_4> has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <regis_8_5> has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <regis_8_6> has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+WARNING:Xst:1896 - Due to other FF/Latch trimming, FF/Latch <regis_8_7> has a constant value of 0 in block <top>. This FF/Latch will be trimmed during the optimization process.
+
+Mapping all equations...
+Building and optimizing final netlist ...
+Found area constraint ratio of 100 (+ 5) on block top, actual ratio is 5.
+FlipFlop rs_0 has been replicated 4 time(s)
+FlipFlop rs_1 has been replicated 2 time(s)
+
+Final Macro Processing ...
+
+=========================================================================
+Final Register Report
+
+Macro Statistics
+# Registers                                            : 199
+ Flip-Flops                                            : 199
+
+=========================================================================
+
+=========================================================================
+*                           Partition Report                            *
+=========================================================================
+
+Partition Implementation Status
+-------------------------------
+
+  No Partitions were found in this design.
+
+-------------------------------
+
+=========================================================================
+*                            Final Report                               *
+=========================================================================
+Final Results
+RTL Top Level Output File Name     : top.ngr
+Top Level Output File Name         : top
+Output Format                      : NGC
+Optimization Goal                  : Speed
+Keep Hierarchy                     : No
+
+Design Statistics
+# IOs                              : 9
+
+Cell Usage :
+# BELS                             : 509
+#      GND                         : 1
+#      LUT2                        : 66
+#      LUT2_D                      : 1
+#      LUT3                        : 102
+#      LUT3_D                      : 8
+#      LUT3_L                      : 11
+#      LUT4                        : 134
+#      LUT4_D                      : 14
+#      LUT4_L                      : 17
+#      MUXCY                       : 29
+#      MUXF5                       : 53
+#      MUXF6                       : 24
+#      MUXF7                       : 16
+#      MUXF8                       : 8
+#      VCC                         : 1
+#      XORCY                       : 24
+# FlipFlops/Latches                : 199
+#      FD                          : 6
+#      FDE                         : 176
+#      FDS                         : 17
+# Clock Buffers                    : 1
+#      BUFGP                       : 1
+# IO Buffers                       : 8
+#      OBUF                        : 8
+=========================================================================
+
+Device utilization summary:
+---------------------------
+
+Selected Device : 3s500efg320-4 
+
+ Number of Slices:                      238  out of   4656     5%  
+ Number of Slice Flip Flops:            199  out of   9312     2%  
+ Number of 4 input LUTs:                353  out of   9312     3%  
+ Number of IOs:                           9
+ Number of bonded IOBs:                   9  out of    232     3%  
+ Number of GCLKs:                         1  out of     24     4%  
+
+---------------------------
+Partition Resource Summary:
+---------------------------
+
+  No Partitions were found in this design.
+
+---------------------------
+
+
+=========================================================================
+TIMING REPORT
+
+NOTE: THESE TIMING NUMBERS ARE ONLY A SYNTHESIS ESTIMATE.
+      FOR ACCURATE TIMING INFORMATION PLEASE REFER TO THE TRACE REPORT
+      GENERATED AFTER PLACE-and-ROUTE.
+
+Clock Information:
+------------------
+-----------------------------------+------------------------+-------+
+Clock Signal                       | Clock buffer(FF name)  | Load  |
+-----------------------------------+------------------------+-------+
+clk                                | BUFGP                  | 199   |
+-----------------------------------+------------------------+-------+
+
+Asynchronous Control Signals Information:
+----------------------------------------
+No asynchronous control signals found in this design
+
+Timing Summary:
+---------------
+Speed Grade: -4
+
+   Minimum period: 10.681ns (Maximum Frequency: 93.624MHz)
+   Minimum input arrival time before clock: No path found
+   Maximum output required time after clock: 4.283ns
+   Maximum combinational path delay: No path found
+
+Timing Detail:
+--------------
+All values displayed in nanoseconds (ns)
+
+=========================================================================
+Timing constraint: Default period analysis for Clock 'clk'
+  Clock period: 10.681ns (frequency: 93.624MHz)
+  Total number of paths / destination ports: 13420 / 391
+-------------------------------------------------------------------------
+Delay:               10.681ns (Levels of Logic = 10)
+  Source:            rs_0_3 (FF)
+  Destination:       pc_6 (FF)
+  Source Clock:      clk rising
+  Destination Clock: clk rising
+
+  Data Path: rs_0_3 to pc_6
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q             16   0.591   1.113  rs_0_3 (rs_0_3)
+     LUT2:I1->O            1   0.704   0.000  mux8_10 (mux8_10)
+     MUXF5:I0->O           1   0.321   0.000  mux8_8_f5 (mux8_8_f5)
+     MUXF6:I0->O           1   0.521   0.000  mux8_6_f6 (mux8_6_f6)
+     MUXF7:I0->O           1   0.521   0.000  mux8_4_f7 (mux8_4_f7)
+     MUXF8:I0->O           3   0.521   0.566  mux8_2_f8 (_COND_1<0>)
+     LUT4:I2->O            1   0.704   0.595  pc_cmp_ne0009146 (pc_cmp_ne0009146)
+     LUT4:I0->O            8   0.704   0.761  pc_cmp_ne0009164 (pc_cmp_ne0009)
+     LUT4:I3->O            3   0.704   0.535  pc_mux0000<0>3 (N20)
+     LUT4_L:I3->LO         1   0.704   0.104  pc_mux0000<7>_SW0 (N14)
+     LUT4:I3->O            1   0.704   0.000  pc_mux0000<7> (pc_mux0000<7>)
+     FDE:D                     0.308          pc_7
+    ----------------------------------------
+    Total                     10.681ns (7.007ns logic, 3.674ns route)
+                                       (65.6% logic, 34.4% route)
+
+=========================================================================
+Timing constraint: Default OFFSET OUT AFTER for Clock 'clk'
+  Total number of paths / destination ports: 8 / 8
+-------------------------------------------------------------------------
+Offset:              4.283ns (Levels of Logic = 1)
+  Source:            led_7 (FF)
+  Destination:       led<7> (PAD)
+  Source Clock:      clk rising
+
+  Data Path: led_7 to led<7>
+                                Gate     Net
+    Cell:in->out      fanout   Delay   Delay  Logical Name (Net Name)
+    ----------------------------------------  ------------
+     FDE:C->Q              1   0.591   0.420  led_7 (led_7)
+     OBUF:I->O                 3.272          led_7_OBUF (led<7>)
+    ----------------------------------------
+    Total                      4.283ns (3.863ns logic, 0.420ns route)
+                                       (90.2% logic, 9.8% route)
+
+=========================================================================
+
+
+Total REAL time to Xst completion: 16.00 secs
+Total CPU time to Xst completion: 15.50 secs
+ 
+--> 
+
+
+Total memory usage is 529960 kilobytes
+
+Number of errors   :    0 (   0 filtered)
+Number of warnings :  111 (   0 filtered)
+Number of infos    :   19 (   0 filtered)
+

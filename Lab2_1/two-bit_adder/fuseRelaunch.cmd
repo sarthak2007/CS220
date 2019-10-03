@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -o "/media/paramvir/786F-1E38/CS220Labs/Lab2_1/two-bit_adder/two_bit_adder_isim_beh.exe" -prj "/media/paramvir/786F-1E38/CS220Labs/Lab2_1/two-bit_adder/two_bit_adder_beh.prj" "work.two_bit_adder" "work.glbl" 

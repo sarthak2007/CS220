@@ -1,0 +1,4 @@
+verilog work "rot_event.v"
+verilog work "regist.v"
+verilog work "driver.v"
+verilog work "top.v"

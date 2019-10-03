@@ -1,0 +1,8 @@
+INTSTYLE=impact
+INFILE=/media/ssinghal/480A-D8B5/CS220Labs/Lab3_2_2/rip/impact.xsl
+OUTFILE=/media/ssinghal/480A-D8B5/CS220Labs/Lab3_2_2/rip/impact.xsl
+FAMILY=Multiple
+PART=Multiple
+WORKINGDIR=/media/ssinghal/480A-D8B5/CS220Labs/Lab3_2_2/rip
+LICENSE=iMPACT
+USER_INFO=iMPACT

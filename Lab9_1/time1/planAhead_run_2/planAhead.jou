@@ -1,0 +1,50 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7 (64-bit)
+# Build 321239 by xbuild on Fri Sep 27 19:24:36 MDT 2013
+# Start of session at: Mon Apr  1 14:03:26 2019
+# Process ID: 6503
+# Log file: /media/ssinghal/480A-D8B5/CS220Labs/Lab9_1/time1/planAhead_run_2/planAhead.log
+# Journal file: /media/ssinghal/480A-D8B5/CS220Labs/Lab9_1/time1/planAhead_run_2/planAhead.jou
+#-----------------------------------------------------------
+start_gui
+source /media/ssinghal/480A-D8B5/CS220Labs/Lab9_1/time1/pa.fromHdl.tcl
+update_compile_order -fileset sim_1
+set_property package_pin "" [get_ports [list  {led[7]}]]
+startgroup
+set_property package_pin F9 [get_ports {led[7]}]
+endgroup
+startgroup
+set_property package_pin F9 [get_ports {led[7]}]
+endgroup
+startgroup
+set_property package_pin E9 [get_ports {led[6]}]
+endgroup
+startgroup
+set_property package_pin D11 [get_ports {led[5]}]
+endgroup
+startgroup
+set_property package_pin C11 [get_ports {led[4]}]
+endgroup
+startgroup
+set_property package_pin F11 [get_ports {led[3]}]
+endgroup
+startgroup
+set_property package_pin E11 [get_ports {led[2]}]
+endgroup
+startgroup
+set_property package_pin E12 [get_ports {led[1]}]
+endgroup
+startgroup
+set_property package_pin F12 [get_ports {led[0]}]
+endgroup
+set_property iostandard LVTTL [get_ports [list {led[7]} {led[6]} {led[5]} {led[4]} {led[3]} {led[2]} {led[1]} {led[0]}]]
+startgroup
+set_property package_pin C9 [get_ports clk]
+endgroup
+startgroup
+set_property package_pin L13 [get_ports y]
+endgroup
+set_property iostandard LVCMOS33 [get_ports [list clk]]
+set_property iostandard LVTTL [get_ports [list y]]
+set_property pulltype PULLUP [get_ports [list y]]
+save_constraints

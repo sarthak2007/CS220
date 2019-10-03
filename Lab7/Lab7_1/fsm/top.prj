@@ -1,0 +1,3 @@
+verilog work "second.v"
+verilog work "first.v"
+verilog work "top.v"

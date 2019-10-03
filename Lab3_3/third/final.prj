@@ -1,0 +1,5 @@
+verilog work "one.v"
+verilog work "six.v"
+verilog work "four.v"
+verilog work "five.v"
+verilog work "final.v"

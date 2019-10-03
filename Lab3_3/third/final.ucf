@@ -1,0 +1,70 @@
+
+# PlanAhead Generated physical constraints 
+
+NET "sum[0]" LOC = F12;
+NET "sum[5]" LOC = D11;
+NET "sum[4]" LOC = C11;
+NET "sum[3]" LOC = F11;
+NET "sum[2]" LOC = E11;
+NET "sum[1]" LOC = E12;
+
+# PlanAhead Generated IO constraints 
+
+NET "sum[5]" IOSTANDARD = LVTTL;
+NET "sum[4]" IOSTANDARD = LVTTL;
+NET "sum[3]" IOSTANDARD = LVTTL;
+NET "sum[2]" IOSTANDARD = LVTTL;
+NET "sum[1]" IOSTANDARD = LVTTL;
+NET "sum[0]" IOSTANDARD = LVTTL;
+
+# PlanAhead Generated physical constraints 
+
+NET "y[3]" LOC = N17;
+NET "y[2]" LOC = H18;
+NET "y[1]" LOC = L14;
+NET "y[0]" LOC = L13;
+
+# PlanAhead Generated IO constraints 
+
+NET "y[3]" IOSTANDARD = LVTTL;
+NET "y[2]" IOSTANDARD = LVTTL;
+NET "y[1]" IOSTANDARD = LVTTL;
+NET "y[0]" IOSTANDARD = LVTTL;
+NET "y[3]" PULLUP;
+NET "y[2]" PULLUP;
+NET "y[1]" PULLUP;
+NET "y[0]" PULLUP;
+
+# PlanAhead Generated physical constraints 
+
+NET "cout" LOC = E9;
+
+# PlanAhead Generated IO constraints 
+
+NET "cout" IOSTANDARD = LVTTL;
+
+# PlanAhead Generated physical constraints 
+
+NET "pb1" LOC = V4;
+NET "pb2" LOC = H13;
+NET "pb3" LOC = K17;
+NET "pb4" LOC = D18;
+NET "pb5" LOC = V16;
+
+# PlanAhead Generated IO constraints 
+
+NET "pb1" IOSTANDARD = LVTTL;
+NET "pb2" IOSTANDARD = LVTTL;
+NET "pb3" IOSTANDARD = LVTTL;
+NET "pb4" IOSTANDARD = LVTTL;
+NET "pb5" IOSTANDARD = LVTTL;
+NET "pb1" PULLDOWN;
+NET "pb2" PULLDOWN;
+NET "pb3" PULLDOWN;
+NET "pb4" PULLDOWN;
+NET "pb5" PULLDOWN;
+NET "PB1" CLOCK_DEDICATED_ROUTE = FALSE;
+NET "PB2" CLOCK_DEDICATED_ROUTE = FALSE;
+NET "PB3" CLOCK_DEDICATED_ROUTE = FALSE;
+NET "PB4" CLOCK_DEDICATED_ROUTE = FALSE;
+NET "PB5" CLOCK_DEDICATED_ROUTE = FALSE;

@@ -1,0 +1,4 @@
+verilog work "one.v"
+verilog work "rot_event.v"
+verilog work "rising.v"
+verilog work "top.v"

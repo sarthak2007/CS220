@@ -1,0 +1,8 @@
+INTSTYLE=ise
+INFILE=/media/ssinghal/480A-D8B5/CS220Labs/Lab10/time2/top.ncd
+OUTFILE=/media/ssinghal/480A-D8B5/CS220Labs/Lab10/time2/top.bit
+FAMILY=Spartan3E
+PART=xc3s500e-4fg320
+WORKINGDIR=/media/ssinghal/480A-D8B5/CS220Labs/Lab10/time2
+LICENSE=WebPack
+USER_INFO=211450758_0_0_676

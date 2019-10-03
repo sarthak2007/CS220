@@ -1,0 +1,22 @@
+Running: /opt/Xilinx/14.7/ISE_DS/ISE/bin/lin64/unwrapped/fuse -intstyle ise -incremental -lib unisims_ver -lib unimacro_ver -lib xilinxcorelib_ver -o /media/ssinghal/480A-D8B5/CS220Labs/Lab3_2_2/rip/TOP_isim_beh.exe -prj /media/ssinghal/480A-D8B5/CS220Labs/Lab3_2_2/rip/TOP_beh.prj work.TOP work.glbl 
+ISim P.20131013 (signature 0xfbc00daa)
+Number of CPUs detected in this system: 4
+Turning on mult-threading, number of parallel sub-compilation jobs: 8 
+Determining compilation order of HDL files
+Analyzing Verilog file "/media/ssinghal/480A-D8B5/CS220Labs/Lab3_2_2/rip/ripp.v" into library work
+Analyzing Verilog file "/media/ssinghal/480A-D8B5/CS220Labs/Lab3_2_2/rip/TOP.v" into library work
+Analyzing Verilog file "/opt/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v" into library work
+Starting static elaboration
+Completed static elaboration
+Fuse Memory Usage: 94636 KB
+Fuse CPU Usage: 1380 ms
+Compiling module ripple
+Compiling module TOP
+Compiling module glbl
+Time Resolution for simulation is 1ps.
+Waiting for 1 sub-compilation(s) to finish...
+Compiled 3 Verilog Units
+Built simulation executable /media/ssinghal/480A-D8B5/CS220Labs/Lab3_2_2/rip/TOP_isim_beh.exe
+Fuse Memory Usage: 654820 KB
+Fuse CPU Usage: 1400 ms
+GCC CPU Usage: 310 ms

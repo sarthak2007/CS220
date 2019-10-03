@@ -1,0 +1,52 @@
+#-----------------------------------------------------------
+# PlanAhead v14.7 (64-bit)
+# Build 321239 by xbuild on Fri Sep 27 19:24:36 MDT 2013
+# Start of session at: Mon Feb  4 14:54:01 2019
+# Process ID: 5411
+# Log file: /media/ssinghal/480A-D8B5/CS220Labs/Lab4/lcd/planAhead_run_1/planAhead.log
+# Journal file: /media/ssinghal/480A-D8B5/CS220Labs/Lab4/lcd/planAhead_run_1/planAhead.jou
+#-----------------------------------------------------------
+start_gui
+source /media/ssinghal/480A-D8B5/CS220Labs/Lab4/lcd/pa.fromHdl.tcl
+update_compile_order -fileset sim_1
+startgroup
+set_property package_pin M15 [get_ports {data[3]}]
+endgroup
+startgroup
+set_property package_pin P17 [get_ports {data[2]}]
+endgroup
+startgroup
+set_property package_pin P17 [get_ports {data[2]}]
+endgroup
+startgroup
+set_property package_pin R16 [get_ports {data[1]}]
+endgroup
+startgroup
+set_property package_pin R15 [get_ports {data[0]}]
+endgroup
+startgroup
+set_property package_pin C9 [get_ports clk]
+endgroup
+startgroup
+set_property package_pin M18 [get_ports LCD_E]
+endgroup
+startgroup
+set_property package_pin L18 [get_ports LCD_RS]
+endgroup
+startgroup
+set_property package_pin L17 [get_ports LCD_W]
+endgroup
+startgroup
+set_property package_pin C9 [get_ports clk]
+endgroup
+set_property is_loc_fixed false [get_ports [list  {data[0]}]]
+set_property iostandard LVCMOS33 [get_ports [list {data[3]} {data[2]} {data[1]} {data[0]}]]
+set_property iostandard LVCMOS33 [get_ports [list clk]]
+set_property iostandard LVCMOS33 [get_ports [list LCD_E]]
+set_property iostandard LVCMOS33 [get_ports [list LCD_W]]
+set_property iostandard LVCMOS33 [get_ports [list LCD_RS]]
+set_property drive 4 [get_ports [list {data[3]} {data[2]} {data[1]} {data[0]}]]
+set_property drive 4 [get_ports [list LCD_E]]
+set_property drive 4 [get_ports [list LCD_RS]]
+set_property drive 4 [get_ports [list LCD_W]]
+save_constraints

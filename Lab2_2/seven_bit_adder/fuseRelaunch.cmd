@@ -1,0 +1,1 @@
+-intstyle "ise" -incremental -lib "unisims_ver" -lib "unimacro_ver" -lib "xilinxcorelib_ver" -o "/media/paramvir/786F-1E38/CS220Labs/Lab2_2/seven_bit_adder/top_module_isim_beh.exe" -prj "/media/paramvir/786F-1E38/CS220Labs/Lab2_2/seven_bit_adder/top_module_beh.prj" "work.top_module" "work.glbl" 

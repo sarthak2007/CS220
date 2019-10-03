@@ -1,0 +1,7 @@
+verilog isim_temp "one.v"
+verilog isim_temp "six.v"
+verilog isim_temp "four.v"
+verilog isim_temp "five.v"
+verilog isim_temp "final.v"
+verilog isim_temp "test.v"
+verilog isim_temp "/opt/Xilinx/14.7/ISE_DS/ISE//verilog/src/glbl.v"
